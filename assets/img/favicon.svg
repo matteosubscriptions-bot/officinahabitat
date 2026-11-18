@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Officina Habitat">
+  <rect width="32" height="32" fill="#293D31"/>
+  <g transform="translate(3 3) scale(0.8125)">
+    <path d="M1 1h18v6H7v12H1V1Z" fill="#EDE9DF"/>
+    <path d="M31 31H13v-6h12V13h6v18Z" fill="#EDE9DF"/>
+    <rect x="13" y="13" width="6" height="6" fill="#B66D4D"/>
+  </g>
+</svg>
