@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti &mdash; Officina Habitat</title>
+  <meta name="description" content="Scrivimi cosa ti serve: modulo di contatto, modalit&agrave; di collaborazione e come funziona un preventivo.">
+  <meta name="theme-color" content="#293D31">
+  <meta property="og:title" content="Contatti &mdash; Officina Habitat">
+  <meta property="og:description" content="Scrivimi cosa ti serve: modulo di contatto, modalit&agrave; di collaborazione e come funziona un preventivo.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Fraunces:ital,wght@1,400&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="salta" href="#principale">Salta al contenuto</a>
+
+  <header class="testa">
+    <div class="contenitore testa__interno">
+      <a class="marchio" href="index.html">
+        <svg class="marchio__segno" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M1 1h18v6H7v12H1V1Z" fill="currentColor"/><path d="M31 31H13v-6h12V13h6v18Z" fill="currentColor"/><rect x="13" y="13" width="6" height="6" fill="#B66D4D"/></svg>
+        <span class="marchio__testo">
+          <span class="marchio__nome">Officina Habitat</span>
+          <span class="marchio__payoff">Progettare. Costruire. Coltivare.</span>
+        </span>
+      </a>
+      <p class="testa__cta"><a class="btn btn--primario" href="contatti.html" aria-current="page">Raccontami il tuo progetto</a></p>
+      <nav class="nav-primaria" aria-label="Sezioni del sito">
+        <ul class="nav-primaria__lista">
+          <li><a href="costruire.html">Costruire</a></li>
+          <li><a href="coltivare.html">Coltivare</a></li>
+          <li><a href="trasformare.html">Trasformare</a></li>
+          <li><a href="progetti.html">Progetti</a></li>
+          <li><a href="chi-sono.html">Chi sono</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="principale" tabindex="-1">
+    <section class="hero hero--pagina">
+      <div class="contenitore hero__interno">
+        <nav class="briciole" aria-label="Percorso">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Contatti</li>
+          </ol>
+        </nav>
+        <p class="occhiello">Contatti</p>
+        <h1>Parliamone</h1>
+        <p class="guida">Raccontami cosa ti serve, dove si trova e in quanto tempo vorresti averlo. Ti rispondo con le prime domande utili e con la modalit&agrave; di collaborazione pi&ugrave; adatta.</p>
+      </div>
+    </section>
+    <section class="sezione">
+      <div class="contenitore">
+        <div class="griglia griglia--2">
+
+          <div>
+            <h2>Raccontami il tuo progetto</h2>
+
+            <div class="riepilogo-errori" id="riepilogo-errori" role="alert" tabindex="-1" hidden>
+              <h3>Controlla questi campi prima di inviare</h3>
+              <ul id="riepilogo-lista"></ul>
+            </div>
+
+            <div class="stato stato--esito" id="esito-invio" role="status" tabindex="-1" hidden>
+              <span class="stato__segno">Richiesta pronta</span>
+              <h3>Ho preparato il messaggio nel tuo programma di posta</h3>
+              <p>Si apre una mail gi&agrave; compilata verso <strong>ciao@officinahabitat.it</strong>: controllala e premi invia. Se non si &egrave; aperta nulla, copia il testo e scrivimi direttamente a quell&rsquo;indirizzo.</p>
+              <p>Di solito rispondo entro due giorni lavorativi con le prime domande utili e con la modalit&agrave; di collaborazione pi&ugrave; adatta.</p>
+              <p class="azioni"><button type="button" class="btn btn--secondario" id="nuovo-messaggio">Scrivi un&rsquo;altra richiesta</button></p>
+            </div>
+
+            <div class="stato stato--guasto" id="guasto-invio" role="alert" tabindex="-1" hidden>
+              <span class="stato__segno">Invio non riuscito</span>
+              <h3>Non sono riuscito a inviare la richiesta</h3>
+              <p>Pu&ograve; essere un problema momentaneo del tuo browser o della connessione. Quello che hai scritto &egrave; rimasto nel modulo: puoi riprovare, oppure copiare il testo e scrivermi a <a href="mailto:ciao@officinahabitat.it">ciao@officinahabitat.it</a>.</p>
+              <p class="azioni"><button type="button" class="btn btn--primario" id="riprova-invio">Riprova</button></p>
+            </div>
+
+            <noscript>
+              <div class="stato">
+                <h3>Il modulo ha bisogno di JavaScript</h3>
+                <p>Con JavaScript disattivato il modulo non pu&ograve; essere inviato. Scrivimi direttamente a <a href="mailto:ciao@officinahabitat.it">ciao@officinahabitat.it</a> indicando cosa ti serve, dove si trova il progetto e in quanto tempo vorresti averlo.</p>
+              </div>
+            </noscript>
+
+            <form class="form" id="form-contatto" novalidate>
+              <p class="testo-sec">Tutti i campi sono obbligatori, tranne quelli segnati come facoltativi.</p>
+
+              <div class="campo" id="campo-nome">
+                <label for="nome">Nome e cognome</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="errore-nome">
+                <p class="errore-campo" id="errore-nome"></p>
+              </div>
+
+              <div class="campo" id="campo-email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="errore-email">
+                <p class="errore-campo" id="errore-email"></p>
+              </div>
+
+              <div class="campo" id="campo-telefono">
+                <label for="telefono">Telefono <span class="facolt">(facoltativo)</span></label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" aria-describedby="nota-telefono errore-telefono">
+                <span class="campo__nota" id="nota-telefono">Utile se preferisci una telefonata invece di scambiarci email.</span>
+                <p class="errore-campo" id="errore-telefono"></p>
+              </div>
+
+              <div class="campo" id="campo-area">
+                <label for="area">Di cosa si tratta</label>
+                <select id="area" name="area" required aria-describedby="errore-area">
+                  <option value="">Scegli un&rsquo;area&hellip;</option>
+                  <option value="Costruire">Costruire &mdash; arredi, strutture, manufatti</option>
+                  <option value="Coltivare">Coltivare &mdash; orti e spazi verdi produttivi</option>
+                  <option value="Trasformare">Trasformare &mdash; allestimenti e furgoni</option>
+                  <option value="Non lo so ancora">Non lo so ancora</option>
+                </select>
+                <p class="errore-campo" id="errore-area"></p>
+              </div>
+
+              <div class="campo" id="campo-luogo">
+                <label for="luogo">Comune o zona del progetto <span class="facolt">(facoltativo)</span></label>
+                <input type="text" id="luogo" name="luogo" autocomplete="address-level2" aria-describedby="nota-luogo errore-luogo">
+                <span class="campo__nota" id="nota-luogo">Mi serve per dirti subito se la zona &egrave; raggiungibile.</span>
+                <p class="errore-campo" id="errore-luogo"></p>
+              </div>
+
+              <div class="campo" id="campo-messaggio">
+                <label for="messaggio">Raccontami il progetto</label>
+                <textarea id="messaggio" name="messaggio" required aria-describedby="nota-messaggio errore-messaggio"></textarea>
+                <span class="campo__nota" id="nota-messaggio">Cosa ti serve, dove va, chi lo user&agrave; e in quanto tempo vorresti averlo. Anche solo due righe vanno bene.</span>
+                <p class="errore-campo" id="errore-messaggio"></p>
+              </div>
+
+              <div class="campo" id="campo-consenso">
+                <p class="privacy-nota">I dati che scrivi qui li uso solo per risponderti e per preparare un eventuale preventivo. Non li condivido con altri e non li uso per invii pubblicitari. Puoi chiedermi in qualsiasi momento di cancellarli scrivendo a ciao@officinahabitat.it.</p>
+                <div class="campo--scelta">
+                  <input type="checkbox" id="consenso" name="consenso" required aria-describedby="errore-consenso">
+                  <label for="consenso">Ho letto come vengono usati i miei dati e acconsento a essere contattato per questa richiesta.</label>
+                </div>
+                <p class="errore-campo" id="errore-consenso"></p>
+              </div>
+
+              <p class="azioni"><button type="submit" class="btn btn--primario">Invia la richiesta</button></p>
+            </form>
+          </div>
+
+          <div>
+            <h2>Altri modi per scrivermi</h2>
+            <ul class="elenco-segni">
+              <li><strong>Email</strong><br><a href="mailto:ciao@officinahabitat.it">ciao@officinahabitat.it</a></li>
+              <li><strong>Area di lavoro</strong><br>Indicami il comune: ti dico subito se &egrave; raggiungibile e se il trasporto incide sul preventivo.</li>
+              <li><strong>Tempi di risposta</strong><br>Di solito entro due giorni lavorativi.</li>
+            </ul>
+            <div class="stato">
+              <h3>Cosa succede dopo</h3>
+              <p>Ti rispondo con le prime domande utili (misure, foto del luogo, tempi) e ti dico quale modalit&agrave; di collaborazione ha senso nel tuo caso. Solo dopo si parla di preventivo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sezione su-superficie">
+      <div class="contenitore">
+        <div class="intestazione-sezione">
+          <p class="occhiello">Modalit&agrave; di collaborazione</p>
+          <h2>Da dove puoi iniziare</h2>
+          <p>Non tutti hanno bisogno di un lavoro completo: alcuni cercano un progetto, altri una consulenza o un affiancamento.</p>
+        </div>
+        <div class="griglia griglia--4">
+          <article class="scheda">
+            <span class="area-numero">01</span>
+            <h3 class="scheda__titolo">Consulenza</h3>
+            <p class="scheda__messaggio">Incontro, analisi delle esigenze, indicazioni e orientamento.</p>
+            <p class="scheda__fine testo-sec"><strong>Quando:</strong> hai bisogno di capire possibilit&agrave; e priorit&agrave;.</p>
+          </article>
+          <article class="scheda">
+            <span class="area-numero">02</span>
+            <h3 class="scheda__titolo">Progettazione</h3>
+            <p class="scheda__messaggio">Rilievo, studio, disegni, scelta dei materiali e proposta.</p>
+            <p class="scheda__fine testo-sec"><strong>Quando:</strong> serve un piano prima di realizzare.</p>
+          </article>
+          <article class="scheda">
+            <span class="area-numero">03</span>
+            <h3 class="scheda__titolo">Progetto completo</h3>
+            <p class="scheda__messaggio">Progettazione, materiali, costruzione e installazione.</p>
+            <p class="scheda__fine testo-sec"><strong>Quando:</strong> vuoi una soluzione realizzata e pronta all&rsquo;uso.</p>
+          </article>
+          <article class="scheda">
+            <span class="area-numero">04</span>
+            <h3 class="scheda__titolo">Affiancamento</h3>
+            <p class="scheda__messaggio">Supporto pratico e guida durante l&rsquo;autocostruzione o la messa a dimora.</p>
+            <p class="scheda__fine testo-sec"><strong>Quando:</strong> vuoi partecipare e imparare a farlo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sezione">
+      <div class="contenitore">
+        <div class="intestazione-sezione">
+          <p class="occhiello">Preventivi</p>
+          <h2>Come funziona un preventivo</h2>
+          <p>Le lavorazioni dipendono molto da dimensioni, materiali e condizioni del luogo: per questo non trovi un listino generico. Trovi invece regole chiare su come viene costruito il prezzo.</p>
+        </div>
+        <ul class="elenco-segni">
+          <li>Le voci sono separate: progettazione, materiali, lavorazione, trasporto e installazione.</li>
+          <li>&Egrave; scritto cosa &egrave; incluso, cosa &egrave; escluso, i tempi indicativi e quante revisioni del progetto sono previste.</li>
+          <li>Per lavori complessi propongo prima una fase di studio retribuita, cos&igrave; decidi sul progetto e non su un&rsquo;ipotesi.</li>
+          <li>Se una soluzione pi&ugrave; semplice basta, te lo dico: il preventivo pi&ugrave; alto non &egrave; sempre quello giusto.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenitore">
+      <div class="pie__griglia">
+        <div>
+          <a class="marchio" href="index.html">
+            <svg class="marchio__segno" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M1 1h18v6H7v12H1V1Z" fill="currentColor"/><path d="M31 31H13v-6h12V13h6v18Z" fill="currentColor"/><rect x="13" y="13" width="6" height="6" fill="#B66D4D"/></svg>
+            <span class="marchio__testo">
+              <span class="marchio__nome">Officina Habitat</span>
+              <span class="marchio__payoff">Progettare. Costruire. Coltivare.</span>
+            </span>
+          </a>
+          <p style="margin-top:1rem">Spazi, oggetti e sistemi per nuovi modi di abitare.</p>
+          <p><a href="mailto:ciao@officinahabitat.it">ciao@officinahabitat.it</a></p>
+        </div>
+        <div>
+          <h2>Aree</h2>
+          <ul>
+            <li><a href="costruire.html">Costruire</a></li>
+            <li><a href="coltivare.html">Coltivare</a></li>
+            <li><a href="trasformare.html">Trasformare</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Sito</h2>
+          <ul>
+            <li><a href="progetti.html">Progetti</a></li>
+            <li><a href="chi-sono.html">Chi sono</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__chiusura">
+        <p>&copy; 2026 Officina Habitat</p>
+        <p>Progettazione &middot; Realizzazione &middot; Su misura</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
